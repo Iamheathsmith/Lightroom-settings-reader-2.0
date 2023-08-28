@@ -20,6 +20,10 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "filesGlob": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
   "include": [
     "src"
   ]

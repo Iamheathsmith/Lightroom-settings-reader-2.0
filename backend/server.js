@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 1234;
 app.use(express.json());
 app.use(fileUpload());
 
+
 app.use(cors());
 app.use('/api/v1', router);
 
@@ -25,6 +26,13 @@ app.get('/', function (req, res) {
 });
 
 app.use('/', readImageRoutes);
+
+// app.use((req,res,next)=>{
+//     res.setHeader('Access-Control-Allow-Origin','*');
+//     res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+//     res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+//     next(); 
+// })
 
 export const server = {};
 

@@ -8,6 +8,7 @@ const router = express.Router();
 router.route;
 
 router.route('/file-upload').post((request, response) => {
+	console.log('here')
 	const imageBuffer = request.files.file.data;
 	imageReader(imageBuffer)
 		.then((data) => {
