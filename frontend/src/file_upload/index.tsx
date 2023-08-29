@@ -1,11 +1,14 @@
 import  { ChangeEvent, useState } from 'react';
 import axios, { AxiosError } from 'axios';
 import { Button, Input } from 'semantic-ui-react';
+import EXIF from 'exif-js';
 
 import { useDispatch } from 'react-redux';
 import {  setUploadedFile, setUploadedFileName } from '../redux/file';
 
+
 import './index.scss';
+import { XmlType } from '../types';
 
 export const FileUplpad = ({file, handleSetFile}: {file: File | undefined, handleSetFile: (newFile: File | undefined) => void}) => {
 	const dispatch = useDispatch();
@@ -32,8 +35,8 @@ export const FileUplpad = ({file, handleSetFile}: {file: File | undefined, handl
 				},
 			});
 
-			dispatch(setUploadedFile(res.data));
-			handleSetFile(undefined);
+			dispatch(setUploadedFile(res.data as XmlType));
+			// handleSetFile(undefined); // TODO: need a reset
 		} catch (error) {
 			const err = error as AxiosError
 			if (err.response?.status === 500) {

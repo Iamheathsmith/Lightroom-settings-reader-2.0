@@ -2,6 +2,7 @@ import  { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import {  Header } from 'semantic-ui-react';
 import {  getUploadedFileName } from '../../redux/file';
+import EXIF from 'exif-js';
 
 import './index.scss'
 
@@ -9,6 +10,8 @@ export const UploadImagePreview = ({file}: {file: File}) => {
   const imageName = useSelector(getUploadedFileName)
 
   useEffect(() => {
+
+
     if (file) {
       const reader = new FileReader();
       reader.onload = function(){
@@ -16,7 +19,10 @@ export const UploadImagePreview = ({file}: {file: File}) => {
         let output = document.getElementById('output') as HTMLImageElement;
         output.src = dataURL as string;
       };
-      file && reader.readAsDataURL(file);
+
+      
+        
+      reader.readAsDataURL(file);
     }
   }, [file])
 

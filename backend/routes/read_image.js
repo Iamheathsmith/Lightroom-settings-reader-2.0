@@ -1,20 +1,18 @@
 'use strict';
 
 import express from 'express';
-import { imageReader } from '../file_reader.js';
+import exifr from 'exifr'
 
 const router = express.Router();
 
 router.route;
 
 router.route('/file-upload').post((request, response) => {
-	console.log('here')
 	const imageBuffer = request.files.file.data;
-	imageReader(imageBuffer)
-		.then((data) => {
-			response.send(JSON.stringify(data));
-		})
-		.catch('failed');
+
+	exifr.parse(imageBuffer, true)
+	.then((data) => response.send(data))
+	.catch('something went wrong in the parsing')
 });
 
 export { router };

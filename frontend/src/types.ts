@@ -1,0 +1,206 @@
+
+
+export interface XmlType {
+    AlreadyApplied: boolean;
+    ApertureValue: number;
+    ApplicationRecordVersion: string;
+    AutoLateralCA: number;
+    Blacks2012: number;
+    BlueHue: number;
+    BlueMatrixColumn: { [index: number]: number };
+    BlueSaturation: number;
+    BlueTRC: { [index: number]: number };
+    BrightnessValue: number;
+    CameraProfile: string;
+    CameraProfileDigest: string;
+    Clarity2012: number;
+    ColorGradeBlending: number;
+    ColorGradeGlobalHue: number;
+    ColorGradeGlobalLum: number;
+    ColorGradeGlobalSat: number;
+    ColorGradeHighlightLum: number;
+    ColorGradeMidtoneHue: number;
+    ColorGradeMidtoneLum: number;
+    ColorGradeMidtoneSat: number;
+    ColorGradeShadowLum: number;
+    ColorNoiseReduction: number;
+    ColorSpace: number;
+    ColorSpaceData: string;
+    CompatibleVersion: number;
+    Contrast2012: number;
+    CreateDate: string;
+    CreatorTool: string;
+    CropAngle: number;
+    CropBottom: number;
+    CropConstrainToWarp: number;
+    CropLeft: number;
+    CropRight: number;
+    CropTop: number;
+    CustomRendered: string;
+    DateCreated: string;
+    DateTimeOriginal: string;
+    DefringeGreenAmount: number;
+    DefringeGreenHueHi: number;
+    DefringeGreenHueLo: number;
+    DefringePurpleAmount: number;
+    DefringePurpleHueHi: number;
+    DefringePurpleHueLo: number;
+    Dehaze: number;
+    DerivedFrom: { documentID: string, originalDocumentID: string }
+    DeviceManufacturer: string;
+    DeviceMfgDesc: string;
+    DeviceModel: string;
+    DeviceModelDesc: string;
+    DigitalCreationDate: string;
+    DigitalCreationTime: string;
+    DocumentID: string;
+    ExifVersion: string;
+    Exposure2012: number;
+    ExposureCompensation: number;
+    ExposureMode: string;
+    ExposureProgram: string;
+    ExposureTime: number;
+    FNumber: number;
+    FileSource: string;
+    Flash: string;
+    FocalLength: number;
+    FocalLengthIn35mmFormat: number;
+    FocalPlaneResolutionUnit: string;
+    FocalPlaneXResolution: number;
+    FocalPlaneYResolution: number;
+    FujiRatingAlreadyApplied: boolean;
+    GrainAmount: number;
+    GreenHue: number;
+    GreenMatrixColumn: { [index: number]: number };
+    GreenSaturation: number;
+    GreenTRC: { [index: number]: number };
+    HasCrop: boolean;
+    HasSettings: boolean;
+    Highlights2012: number;
+    History: any; //TODO
+    HueAdjustmentAqua: boolean;
+    HueAdjustmentBlue: number;
+    HueAdjustmentGreen: number;
+    HueAdjustmentMagenta: number;
+    HueAdjustmentOrange: number;
+    HueAdjustmentPurple: number;
+    HueAdjustmentRed: number;
+    HueAdjustmentYellow: number;
+    ISO: number;
+    InstanceID: string;
+    LateralChromaticAberrationCorrectionAlreadyApplied: boolean;
+    Lens: string;
+    LensInfo: Array<number>
+    LensMake: string;
+    LensManualDistortionAmount: number;
+    LensModel: string;
+    LensProfileEnable: number;
+    LensSerialNumber: string;
+    LightSource: string;
+    Look: { Description: any; }; //TODO
+    Luminance: { [index: number]: number }
+    LuminanceAdjustmentAqua: number;
+    LuminanceAdjustmentBlue: number;
+    LuminanceAdjustmentGreen: number;
+    LuminanceAdjustmentMagenta: number;
+    LuminanceAdjustmentOrange: number;
+    LuminanceAdjustmentPurple: number;
+    LuminanceAdjustmentRed: number;
+    LuminanceAdjustmentYellow: number;
+    LuminanceSmoothing: number;
+    Make: string;
+    MaskGroupBasedCorrections: Array<any>; //TODO
+    MaxApertureValue: number;
+    Measurement: { [index: number]: number }
+    MediaBlackPoint: { [index: number]: number }
+    MediaWhitePoint: { [index: number]: number }
+    MetadataDate: string;
+    MeteringMode: string;
+    Model: string;
+    ModifyDate: string;
+    OffsetTime: string;
+    OriginalDocumentID: string;
+    OverrideLookVignette: boolean;
+    ParametricDarks: number;
+    ParametricHighlightSplit: number;
+    ParametricHighlights: number;
+    ParametricLights: number;
+    ParametricMidtoneSplit: number;
+    ParametricShadowSplit: number;
+    ParametricShadows: number;
+    PerspectiveAspect: number;
+    PerspectiveHorizontal: number;
+    PerspectiveRotate: number;
+    PerspectiveScale: number;
+    PerspectiveUpright: number;
+    PerspectiveVertical: number;
+    PerspectiveX: number;
+    PerspectiveY: number;
+    PostCropVignetteAmount: number;
+    PreservedFileName: string;
+    PrimaryPlatform: string;
+    ProcessVersion: number;
+    ProfileCMMType: string;
+    ProfileClass: string;
+    ProfileConnectionSpace: string;
+    ProfileCopyright: string;
+    ProfileCreator: string;
+    ProfileDateTime: string;
+    ProfileDescription: string;
+    ProfileFileSignature: string;
+    ProfileVersion: string;
+    Rating: number;
+    RawFileName: string;
+    RedHue: number;
+    RedMatrixColumn: { [index: number]: number }
+    RedSaturation: number;
+    RedTRC: { [index: number]: number }
+    RenderingIntent: string;
+    ResolutionUnit: string;
+    Saturation: number;
+    SaturationAdjustmentAqua: number;
+    SaturationAdjustmentBlue: number;
+    SaturationAdjustmentGreen: number;
+    SaturationAdjustmentMagenta: number;
+    SaturationAdjustmentOrange: number;
+    SaturationAdjustmentPurple: number;
+    SaturationAdjustmentRed: number;
+    SaturationAdjustmentYellow: number;
+    SceneCaptureType: string;
+    SceneType: string;
+    SensingMethod: string;
+    SensitivityType: number;
+    SerialNumber: string;
+    ShadowTint: number;
+    Shadows2012: number;
+    Sharpness: string;
+    ShutterSpeedValue: number;
+    Software: string;
+    SplitToningBalance: number;
+    SplitToningHighlightHue: number;
+    SplitToningHighlightSaturation: number;
+    SplitToningShadowHue: number;
+    SplitToningShadowSaturation: number;
+    SubjectDistanceRange: string;
+    Technology: string;
+    Temperature: number;
+    Texture: number;
+    TimeCreated: string;
+    Tint: number;
+    ToneCurveName2012: string;
+    ToneCurvePV2012: Array<string>
+    ToneCurvePV2012Blue: Array<string>
+    ToneCurvePV2012Green: Array<string>
+    ToneCurvePV2012Red: Array<string>
+    Version: number;
+    Vibrance: number;
+    ViewingCondDesc: string;
+    ViewingConditions: { [index: number]: number }
+    VignetteAmount: number;
+    VignetteCorrectionAlreadyApplied: boolean;
+    WhiteBalance: string;
+    Whites2012: number;
+    XResolution: number;
+    YResolution: number;
+    format: string;
+}

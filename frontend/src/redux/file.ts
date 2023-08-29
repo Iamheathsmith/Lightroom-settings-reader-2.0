@@ -1,6 +1,7 @@
 import { Action, createAction, createReducer } from 'typesafe-actions';
 
 import { RootState } from './root_reducer';
+import { XmlType } from '../types';
 
 export interface FileState {
 	readonly data?: any;
@@ -17,7 +18,7 @@ export const initialState: FileState = {
 export const setUploadedFile = createAction('SET_UPLOADED_FILE')<any | undefined>();
 export const setUploadedFileName = createAction('SET_UPLOADED_FILE_NAME')<string | undefined>();
 
-export function getUploadedFile({ file }: RootState): any | undefined {
+export function getUploadedFile({ file }: RootState): XmlType | undefined {
 	return file.data;
 }
 export function getUploadedFileName({ file }: RootState): string | undefined {
