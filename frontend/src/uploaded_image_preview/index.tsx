@@ -6,12 +6,12 @@ import { UploadImagePreview } from './preview_image';
 
 import './index.scss'
 
-export const UploadImageSection = () => {
+export const UploadImageSection = ({file}: {file: File}) => {
   const imageData = useSelector(getUploadedFile)
 
 	return (
 		<div className='image-preivew-section'>
-      <UploadImagePreview />
+      <UploadImagePreview file={file}/>
       {imageData && <LightroomSettings />}
 
     </div>

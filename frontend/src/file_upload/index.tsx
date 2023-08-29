@@ -3,20 +3,18 @@ import axios, { AxiosError } from 'axios';
 import { Button, Input } from 'semantic-ui-react';
 
 import { useDispatch } from 'react-redux';
-import { setRawFile, setUploadedFile, setUploadedFileName } from '../redux/file';
+import {  setUploadedFile, setUploadedFileName } from '../redux/file';
 
 import './index.scss';
 
-export const FileUplpad = () => {
-	const [file, setfile] = useState<File>();
+export const FileUplpad = ({file, handleSetFile}: {file: File | undefined, handleSetFile: (newFile: File | undefined) => void}) => {
 	const dispatch = useDispatch();
 
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const target = event.target as HTMLInputElement;
 		const files = target.files;
 		if (files) {
-			setfile(files[0]);
-			dispatch(setRawFile(files[0]));
+			handleSetFile(files[0]);
 			dispatch(setUploadedFileName(files[0].name));
 			dispatch(setUploadedFile(undefined));
 		}
@@ -35,7 +33,7 @@ export const FileUplpad = () => {
 			});
 
 			dispatch(setUploadedFile(res.data));
-			setfile(undefined);
+			handleSetFile(undefined);
 		} catch (error) {
 			const err = error as AxiosError
 			if (err.response?.status === 500) {

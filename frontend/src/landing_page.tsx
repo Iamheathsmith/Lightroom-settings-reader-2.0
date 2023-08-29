@@ -6,14 +6,14 @@ import { getUploadedFileName } from './redux/file';
 import { UploadImageSection } from './uploaded_image_preview';
 
 import './landing_page.scss';
+import { FileUploadAndPreview } from './file_upload_and_preview';
 
 const LandingPage: React.FC = () => {
 	const imageName = useSelector(getUploadedFileName)
 
 	return (
 			<div className='landing_page'>
-				<FileUplpad />
-				{imageName && <UploadImageSection />}
+				<FileUploadAndPreview />
 			</div>
 	);
 };
