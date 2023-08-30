@@ -8,3 +8,15 @@ export const TextSetting= ({header, data}: {header: string, data: string | numbe
         </div>
     );
 };
+
+export const BarSetting = ({header, marginLeft, barAmount}: {header: string, marginLeft: string, barAmount: number}) => {
+    return (
+        <div className='bar-settings'>
+            <strong className="bar-settings__text">{header}</strong>
+            <div className="bar-settings__bar">
+                <div style={{left: marginLeft}}className="bar-settings__bar-postion"/>
+            </div>
+            <div className="bar-settings__amount">{barAmount}</div>
+        </div>
+    );
+};
