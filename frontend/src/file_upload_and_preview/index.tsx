@@ -8,9 +8,9 @@ export const FileUploadAndPreview = () => {
     const handleSetFile = (newFile: File | undefined) => setfile(newFile)
 
 	return (
-    <div >
-        <FileUplpad file={file} handleSetFile={handleSetFile}/>
-        {file && <UploadImageSection file={file}/>}
-    </div>
+        <>
+            <FileUplpad file={file} handleSetFile={handleSetFile}/>
+            {file && <UploadImageSection file={file}/>}
+        </>
 	);
 };
