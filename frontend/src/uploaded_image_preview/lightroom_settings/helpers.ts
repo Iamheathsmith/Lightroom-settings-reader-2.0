@@ -11,3 +11,23 @@ export const convertApertureValueToFStop = (apertureValue: number) => {
     const fStop = Math.sqrt(Math.pow(2, rounedApertureValue)).toFixed(1)
     return `F/${fStop}`
 }
+
+const BAR_CENTER = 50
+
+export const convertExporeToBarPostion = (barPostion: number) => {
+    if (barPostion > 0) {
+        const amount = ((barPostion / 5) * 100 / 2)
+        return `${BAR_CENTER + amount}%`
+    }
+    if (barPostion < 0) {
+        const amount = ((barPostion / 5) * 100 / 2)
+        return `${BAR_CENTER - amount}%`
+    }
+    return `${BAR_CENTER}%`
+}
+
+export const convertBaseBarAmountToBarPostion = (barPostion: number) => {
+    if (barPostion > 0) return `${BAR_CENTER + (barPostion / 2)}%`
+    if (barPostion < 0) return `${BAR_CENTER - (barPostion / 2)}%`
+    return `${BAR_CENTER}%`
+}
