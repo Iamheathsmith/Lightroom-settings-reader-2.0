@@ -24,6 +24,9 @@ export const BarSetting = ({
 }) => {
 	const isGrayScale = colorScale === BarColorScale.GrayScaleNormal;
 	const isGrayScaleReversed = colorScale === BarColorScale.GrayScaleReverse;
+	const isColorNormal = colorScale === BarColorScale.ColorNormal;
+	const isTemp = colorScale === BarColorScale.Temp;
+	const isTint = colorScale === BarColorScale.Tint;
 
 	return (
 		<div className='bar-settings'>
@@ -32,6 +35,9 @@ export const BarSetting = ({
 				className={classNames("bar-settings__bar", {
 					"bar-settings__bar--gray-scale": isGrayScale,
 					"bar-settings__bar--gray-scale-reversed": isGrayScaleReversed,
+					"bar-settings__bar--color": isColorNormal,
+					"bar-settings__bar--temp": isTemp,
+					"bar-settings__bar--tint": isTint,
 				})}
 			>
 				<div style={{ left: marginLeft }} className='bar-settings__bar-postion' />

@@ -3,7 +3,12 @@ import { Header } from "semantic-ui-react";
 import { BarSetting, TextSetting } from "../common";
 import { XmlType } from "../../types";
 
-import { convertBaseBarAmountToBarPostion, convertExporeToBarPostion } from "./helpers";
+import {
+	convertBaseBarAmountToBarPostion,
+	convertExporeToBarPostion,
+	convertTempToBarPostion,
+	convertTintToBarPostion,
+} from "../common/helpers";
 import { BarColorScale } from "../../enum";
 
 import "./index.scss";
@@ -13,8 +18,20 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 		<div className='lightroom-settings'>
 			<Header className='lightroom-settings__header'>LightRoom Seetings Used</Header>
 			<TextSetting header={"White Balance"} data={imageData.WhiteBalance} />
-			<BarSetting header={"Temp"} marginLeft={"0"} barAmount={0} />
-			<BarSetting header={"Tint"} marginLeft={"0"} barAmount={0} />
+			<BarSetting
+				header={"Temp"}
+				marginLeft={convertTempToBarPostion(imageData.Temperature)}
+				barAmount={imageData.Temperature}
+				colorScale={BarColorScale.Temp}
+			/>
+			<BarSetting
+				header={"Tint"}
+				marginLeft={convertTintToBarPostion(imageData.Tint)}
+				barAmount={imageData.Tint}
+				colorScale={BarColorScale.Tint}
+			/>
+			<div>----------</div>
+			<i>Tone</i>
 			<BarSetting
 				header={"Exposure"}
 				marginLeft={convertExporeToBarPostion(imageData.Exposure2012)}
@@ -50,6 +67,39 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				marginLeft={convertBaseBarAmountToBarPostion(imageData.Blacks2012)}
 				barAmount={imageData.Blacks2012}
 				colorScale={BarColorScale.GrayScaleNormal}
+			/>
+			<div>----------</div>
+			<i>Presense</i>
+			<BarSetting
+				header={"Texture"}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.Texture)}
+				barAmount={imageData.Texture}
+				colorScale={BarColorScale.GrayScaleReverse}
+			/>
+			<BarSetting
+				header={"Clarity"}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.Clarity2012)}
+				barAmount={imageData.Clarity2012}
+				colorScale={BarColorScale.GrayScaleReverse}
+			/>
+			<BarSetting
+				header={"Dehaze"}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.Dehaze)}
+				barAmount={imageData.Dehaze}
+				colorScale={BarColorScale.GrayScaleReverse}
+			/>
+			<div>----------</div>
+			<BarSetting
+				header={"Saturation"}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.Saturation)}
+				barAmount={imageData.Saturation}
+				colorScale={BarColorScale.ColorNormal}
+			/>
+			<BarSetting
+				header={"Vibrance"}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.Vibrance)}
+				barAmount={imageData.Vibrance}
+				colorScale={BarColorScale.ColorNormal}
 			/>
 		</div>
 	);
