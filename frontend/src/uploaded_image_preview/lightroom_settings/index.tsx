@@ -11,8 +11,11 @@ import {
 } from "../common/helpers";
 import { BarColorScale } from "../../enum";
 
-import "./index.scss";
+import { HSLArea } from "./color_section";
+import { ColorGrading } from "./color_grading";
 import { LineChart, LineChartArea } from "./line_chart";
+
+import "./index.scss";
 
 export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 	console.log("imageData: ", imageData);
@@ -110,6 +113,9 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				blue={imageData.ToneCurvePV2012Blue}
 				green={imageData.ToneCurvePV2012Green}
 			/>
+			<div>----------</div>
+			<HSLArea imageData={imageData} />
+			<ColorGrading imageData={imageData} />
 		</div>
 	);
 };
