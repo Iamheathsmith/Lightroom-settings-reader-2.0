@@ -1,13 +1,18 @@
 .lightroom-settings {
-    display: flex;
-    overflow: auto;
-    flex-direction: column;
-    row-gap: 0.5rem;
+	display: flex;
+	overflow: auto;
+	flex-direction: column;
+	row-gap: 0.5rem;
 
-    .ui.header {
-      font-weight: 700;
-      font-size: 1.2rem;
-      text-decoration: underline;
-    }
-  }
-  
+	.ui.header {
+		font-weight: 700;
+		font-size: 1.2rem;
+		text-decoration: underline;
+	}
+}
+
+.line-chart-tab {
+	&.ui.segment {
+		padding: 0;
+	}
+}

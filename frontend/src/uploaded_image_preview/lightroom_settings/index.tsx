@@ -12,8 +12,10 @@ import {
 import { BarColorScale } from "../../enum";
 
 import "./index.scss";
+import { LineChart, LineChartArea } from "./line_chart";
 
 export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
+	console.log("imageData: ", imageData);
 	return (
 		<div className='lightroom-settings'>
 			<Header className='lightroom-settings__header'>LightRoom Seetings Used</Header>
@@ -100,6 +102,13 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				marginLeft={convertBaseBarAmountToBarPostion(imageData.Vibrance)}
 				barAmount={imageData.Vibrance}
 				colorScale={BarColorScale.ColorNormal}
+			/>
+			<div>----------</div>
+			<LineChartArea
+				base={imageData.ToneCurvePV2012}
+				red={imageData.ToneCurvePV2012Red}
+				blue={imageData.ToneCurvePV2012Blue}
+				green={imageData.ToneCurvePV2012Green}
 			/>
 		</div>
 	);
