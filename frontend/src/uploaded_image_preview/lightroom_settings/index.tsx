@@ -11,10 +11,11 @@ import {
 } from "../common/helpers";
 import { BarColorScale } from "../../enum";
 
-import "./index.scss";
-import { LineChartArea } from "./line_chart";
 import { HSLArea } from "./color_section";
 import { ColorGrading } from "./color_grading";
+import { LineChart, LineChartArea } from "./line_chart";
+
+import "./index.scss";
 
 export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 	console.log("imageData: ", imageData);
