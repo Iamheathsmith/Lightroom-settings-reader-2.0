@@ -58,6 +58,6 @@ export const convertBaseBarAmountToBarPostion = (barPostion: number) => {
 	return `${BAR_CENTER + barPostion / 2}%`;
 };
 
-export const meteringModeDisplay = (meterMode: string) => {
-	return meterMode.replace(/([A-Z])/g, " $1").trim();
+export const meteringModeDisplay = (meterMode?: string) => {
+	return meterMode?.replace(/([A-Z])/g, " $1").trim();
 };

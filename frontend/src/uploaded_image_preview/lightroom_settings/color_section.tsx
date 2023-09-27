@@ -173,5 +173,5 @@ export const HSLArea = ({ imageData }: { imageData: XmlType }) => {
 		},
 	];
 
-	return <Tab panes={panes} />;
+	return <Tab menu={{ secondary: true, pointing: true }} panes={panes} />;
 };

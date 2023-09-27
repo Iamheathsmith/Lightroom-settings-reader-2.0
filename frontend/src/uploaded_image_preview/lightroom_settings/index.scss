@@ -3,12 +3,6 @@
 	overflow: auto;
 	flex-direction: column;
 	row-gap: 0.5rem;
-
-	.ui.header {
-		font-weight: 700;
-		font-size: 1.2rem;
-		text-decoration: underline;
-	}
 }
 
 .line-chart-tab {
@@ -29,53 +23,17 @@
 	.colorwheel {
 		margin: 0 auto;
 		position: relative;
-		transform: scale(-1, 1) rotate(-25deg);
-		// background: conic-gradient(#93ff00, yellow, red, magenta, blue, aqua, lime, #93ff00);
-		background: conic-gradient(
-			hsl(50deg 100% 50%),
-			hsl(60deg 100% 50%),
-			hsl(70deg 100% 50%),
-			hsl(80deg 100% 50%),
-			hsl(90deg 100% 50%),
-			hsl(100deg 100% 50%),
-			hsl(110deg 100% 50%),
-			hsl(120deg 100% 50%),
-			hsl(130deg 100% 50%),
-			hsl(140deg 100% 50%),
-			hsl(150deg 100% 50%),
-			hsl(160deg 100% 50%),
-			hsl(170deg 100% 50%),
-			hsl(180deg 100% 50%),
-			hsl(190deg 100% 50%),
-			hsl(200deg 100% 50%),
-			hsl(210deg 100% 50%),
-			hsl(220deg 100% 50%),
-			hsl(230deg 100% 50%),
-			hsl(240deg 100% 50%),
-			hsl(250deg 100% 50%),
-			hsl(260deg 100% 50%),
-			hsl(270deg 100% 50%),
-			hsl(280deg 100% 50%),
-			hsl(290deg 100% 50%),
-			hsl(300deg 100% 50%),
-			hsl(310deg 100% 50%),
-			hsl(320deg 100% 50%),
-			hsl(330deg 100% 50%),
-			hsl(340deg 100% 50%),
-			hsl(350deg 100% 50%),
-			hsl(0deg 100% 50%),
-			hsl(10deg 100% 50%),
-			hsl(20deg 100% 50%),
-			hsl(30deg 100% 50%),
-			hsl(40deg 100% 50%)
-		);
+		background: conic-gradient(#93ff00, yellow, red, magenta, blue, aqua, lime, #93ff00);
 		border-radius: 50%;
 
 		&-pointer {
-			width: 1rem;
-			height: 1rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			top: calc(50% - 0.75rem);
+			left: calc(50% - 0.75rem);
 			border-radius: 50%;
-			background-color: black;
+			opacity: 0.5;
+			border: 2px solid black;
 			position: absolute;
 		}
 	}

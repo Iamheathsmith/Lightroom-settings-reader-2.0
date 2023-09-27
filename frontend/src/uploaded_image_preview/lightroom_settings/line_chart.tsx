@@ -60,7 +60,7 @@ export const LineChartArea = ({
 		},
 	];
 
-	return <Tab panes={panes} />;
+	return <Tab menu={{ secondary: true, pointing: true }} panes={panes} />;
 };
 
 export const LineChart = ({ lineData, lineColor }: { lineData: Array<string> | undefined; lineColor: string }) => {

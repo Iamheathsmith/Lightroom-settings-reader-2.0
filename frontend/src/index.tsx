@@ -1,21 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
-import './index.css';
+import "./index.css";
 
-import LandingPage from './landing_page';
+import LandingPage from "./landing_page";
 
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+	<React.StrictMode>
+		<Provider store={store}>
 			<LandingPage />
 		</Provider>
-  </React.StrictMode>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

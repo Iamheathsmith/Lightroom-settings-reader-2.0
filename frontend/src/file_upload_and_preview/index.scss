@@ -1,0 +1,30 @@
+.image-preivew-section {
+	display: grid;
+	grid-template-columns: 1fr 25% 320px;
+	height: 100%;
+	background-color: white;
+
+	&__column {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		border-top: 1px solid black;
+		border-left: 1px solid black;
+		border-bottom: 1px solid black;
+		&:not(:first) {
+			border-right: 1px solid black;
+		}
+
+		&-title {
+			padding: 1rem;
+			border-bottom: 1px solid black;
+		}
+
+		.image-preview,
+		.camera-settings,
+		.lightroom-settings {
+			padding: 1rem;
+		}
+	}
+}

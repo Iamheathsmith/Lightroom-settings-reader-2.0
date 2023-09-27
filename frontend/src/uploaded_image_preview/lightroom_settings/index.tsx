@@ -1,4 +1,4 @@
-import { Header } from "semantic-ui-react";
+import { Divider, Header } from "semantic-ui-react";
 
 import { BarSetting, TextSetting } from "../common";
 import { XmlType } from "../../types";
@@ -13,15 +13,13 @@ import { BarColorScale } from "../../enum";
 
 import { HSLArea } from "./color_section";
 import { ColorGrading } from "./color_grading";
-import { LineChart, LineChartArea } from "./line_chart";
+import { LineChartArea } from "./line_chart";
 
 import "./index.scss";
 
 export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
-	console.log("imageData: ", imageData);
 	return (
 		<div className='lightroom-settings'>
-			<Header className='lightroom-settings__header'>LightRoom Seetings Used</Header>
 			<TextSetting header={"White Balance"} data={imageData.WhiteBalance} />
 			<BarSetting
 				header={"Temp"}
@@ -35,7 +33,8 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				barAmount={imageData.Tint}
 				colorScale={BarColorScale.Tint}
 			/>
-			<div>----------</div>
+			<Divider />
+
 			<i>Tone</i>
 			<BarSetting
 				header={"Exposure"}
@@ -73,7 +72,8 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				barAmount={imageData.Blacks2012}
 				colorScale={BarColorScale.GrayScaleNormal}
 			/>
-			<div>----------</div>
+			<Divider />
+
 			<i>Presense</i>
 			<BarSetting
 				header={"Texture"}
@@ -93,7 +93,7 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				barAmount={imageData.Dehaze}
 				colorScale={BarColorScale.GrayScaleReverse}
 			/>
-			<div>----------</div>
+
 			<BarSetting
 				header={"Saturation"}
 				marginLeft={convertBaseBarAmountToBarPostion(imageData.Saturation)}
@@ -106,15 +106,16 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				barAmount={imageData.Vibrance}
 				colorScale={BarColorScale.ColorNormal}
 			/>
-			<div>----------</div>
+			<Divider />
 			<LineChartArea
 				base={imageData.ToneCurvePV2012}
 				red={imageData.ToneCurvePV2012Red}
 				blue={imageData.ToneCurvePV2012Blue}
 				green={imageData.ToneCurvePV2012Green}
 			/>
-			<div>----------</div>
+			<Divider />
 			<HSLArea imageData={imageData} />
+			<Divider />
 			<ColorGrading imageData={imageData} />
 		</div>
 	);

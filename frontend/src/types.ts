@@ -113,7 +113,7 @@ export interface XmlType {
 	MediaBlackPoint: { [index: number]: number };
 	MediaWhitePoint: { [index: number]: number };
 	MetadataDate: string;
-	MeteringMode: string;
+	MeteringMode?: string;
 	Model: string;
 	ModifyDate: string;
 	OffsetTime: string;

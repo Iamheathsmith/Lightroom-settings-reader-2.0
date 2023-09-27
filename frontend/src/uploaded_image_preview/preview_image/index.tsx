@@ -1,30 +1,19 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { Header } from "semantic-ui-react";
-import { getUploadedFileName } from "../../redux/file";
 
 import "./index.scss";
 
 export const UploadImagePreview = ({ file }: { file: File }) => {
-	const imageName = useSelector(getUploadedFileName);
-
 	useEffect(() => {
-		if (file) {
-			const reader = new FileReader();
-			reader.onload = function () {
-				let dataURL = reader.result;
-				let output = document.getElementById("output") as HTMLImageElement;
-				output.src = dataURL as string;
-			};
-
-			reader.readAsDataURL(file);
-		}
+		let imageElement = document.getElementById("output") as HTMLImageElement;
+		const url = URL.createObjectURL(file);
+		imageElement.src = url;
 	}, [file]);
 
 	return (
 		<div className='image-preview'>
-			<Header className='image-preview__name'>{imageName}</Header>
 			<img className='image-preview__image' alt='' id='output' />
+			<Header className='image-preview__name'>{file?.name}</Header>
 		</div>
 	);
 };
