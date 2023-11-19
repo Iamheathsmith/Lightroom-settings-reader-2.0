@@ -1,19 +1,15 @@
-import { ChangeEvent, useState } from "react";
-import { Input } from "semantic-ui-react";
-
-import { useDispatch } from "react-redux";
+import { ChangeEvent, useRef, useState } from "react";
+import { Button, Header } from "semantic-ui-react";
 
 import "./index.scss";
 
-export const FileUplpad = ({
+export const FileUpload = ({
 	file,
 	handleSetFile,
 }: {
 	file: File | undefined;
 	handleSetFile: (newFile: File) => void;
 }) => {
-	const dispatch = useDispatch();
-
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const target = event.target as HTMLInputElement;
 		const targetFile = target.files?.[0];
@@ -22,9 +18,21 @@ export const FileUplpad = ({
 		}
 	};
 
+	const fileInputRef = useRef<HTMLInputElement>(null);
+	const handleButtonClick = () => fileInputRef.current?.click();
+
 	return (
-		<Input type='file' placeholder='Search...' action>
-			<Input type='file' className='upload-form__input' id='fileUpload' onChange={handleChange} />
-		</Input>
+		<div className='upload-form'>
+			<input
+				className='upload-form__input'
+				onChange={handleChange}
+				multiple={false}
+				ref={fileInputRef}
+				type='file'
+				hidden
+			/>
+			<Button ize='small' className='upload-form__button' onClick={handleButtonClick} content={"Image Upload"} />
+			<Header className='upload-form__file-name'>{file?.name ?? "Lets get Extracting!"}</Header>
+		</div>
 	);
 };

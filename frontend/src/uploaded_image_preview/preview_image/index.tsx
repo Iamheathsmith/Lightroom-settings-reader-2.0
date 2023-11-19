@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Header } from "semantic-ui-react";
+import { motion } from "framer-motion";
 
 import "./index.scss";
 
@@ -11,9 +11,14 @@ export const UploadImagePreview = ({ file }: { file: File }) => {
 	}, [file]);
 
 	return (
-		<div className='image-preview'>
+		<motion.div
+			initial={{ opacity: 0, scale: 0 }}
+			animate={{ opacity: 1, scale: 1 }}
+			exit={{ opacity: 0 }}
+			transition={{ duration: 0.2 }}
+			className='image-preview'
+		>
 			<img className='image-preview__image' alt='' id='output' />
-			<Header className='image-preview__name'>{file?.name}</Header>
-		</div>
+		</motion.div>
 	);
 };

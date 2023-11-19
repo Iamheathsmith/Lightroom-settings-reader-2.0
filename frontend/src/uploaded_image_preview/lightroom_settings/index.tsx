@@ -1,4 +1,4 @@
-import { Divider, Header } from "semantic-ui-react";
+import { Divider } from "semantic-ui-react";
 
 import { BarSetting, TextSetting } from "../common";
 import { XmlType } from "../../types";
@@ -16,10 +16,18 @@ import { ColorGrading } from "./color_grading";
 import { LineChartArea } from "./line_chart";
 
 import "./index.scss";
+import { motion } from "framer-motion";
 
 export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 	return (
-		<div className='lightroom-settings'>
+		<motion.div
+			initial={{ opacity: 0, x: -100 }}
+			animate={{ opacity: 1, x: 0 }}
+			exit={{ opacity: 0 }}
+			transition={{ type: "spring", duration: 0.2 }}
+			className='lightroom-settings'
+		>
+			{" "}
 			<TextSetting header={"White Balance"} data={imageData.WhiteBalance} />
 			<BarSetting
 				header={"Temp"}
@@ -34,7 +42,6 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 				colorScale={BarColorScale.Tint}
 			/>
 			<Divider />
-
 			<i>Tone</i>
 			<BarSetting
 				header={"Exposure"}
@@ -44,8 +51,8 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 			/>
 			<BarSetting
 				header={"Contrast"}
-				marginLeft={convertBaseBarAmountToBarPostion(imageData.Contrast2012)}
-				barAmount={imageData.Contrast2012}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.contrast2012)}
+				barAmount={imageData.contrast2012}
 				colorScale={BarColorScale.GrayScaleReverse}
 			/>
 			<BarSetting
@@ -68,12 +75,11 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 			/>
 			<BarSetting
 				header={"Blacks"}
-				marginLeft={convertBaseBarAmountToBarPostion(imageData.Blacks2012)}
-				barAmount={imageData.Blacks2012}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.blacks2012)}
+				barAmount={imageData.blacks2012}
 				colorScale={BarColorScale.GrayScaleNormal}
 			/>
 			<Divider />
-
 			<i>Presense</i>
 			<BarSetting
 				header={"Texture"}
@@ -83,17 +89,16 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 			/>
 			<BarSetting
 				header={"Clarity"}
-				marginLeft={convertBaseBarAmountToBarPostion(imageData.Clarity2012)}
-				barAmount={imageData.Clarity2012}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.clarity2012)}
+				barAmount={imageData.clarity2012}
 				colorScale={BarColorScale.GrayScaleReverse}
 			/>
 			<BarSetting
 				header={"Dehaze"}
-				marginLeft={convertBaseBarAmountToBarPostion(imageData.Dehaze)}
-				barAmount={imageData.Dehaze}
+				marginLeft={convertBaseBarAmountToBarPostion(imageData.dehaze)}
+				barAmount={imageData.dehaze}
 				colorScale={BarColorScale.GrayScaleReverse}
 			/>
-
 			<BarSetting
 				header={"Saturation"}
 				marginLeft={convertBaseBarAmountToBarPostion(imageData.Saturation)}
@@ -117,6 +122,6 @@ export const LightroomSettings = ({ imageData }: { imageData: XmlType }) => {
 			<HSLArea imageData={imageData} />
 			<Divider />
 			<ColorGrading imageData={imageData} />
-		</div>
+		</motion.div>
 	);
 };

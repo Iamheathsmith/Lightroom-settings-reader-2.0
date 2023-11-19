@@ -52,6 +52,11 @@ export const BarSetting = ({
 	const isLuminanceMagenta = colorScale === BarColorScale.LuminanceMagenta;
 	const isLuminancePurple = colorScale === BarColorScale.LuminancePurple;
 
+	const normalizeBarAmount = () => {
+		const toNumber = Number(barAmount);
+		return !isNaN(toNumber) ? toNumber : 0;
+	};
+
 	return (
 		<div className='bar-settings'>
 			<strong className={"bar-settings__text"}>{header}</strong>
@@ -90,7 +95,7 @@ export const BarSetting = ({
 			>
 				<div style={{ left: marginLeft }} className='bar-settings__bar-postion' />
 			</div>
-			<div className='bar-settings__amount'>{barAmount ?? 0}</div>
+			<div className='bar-settings__amount'>{normalizeBarAmount()}</div>
 		</div>
 	);
 };

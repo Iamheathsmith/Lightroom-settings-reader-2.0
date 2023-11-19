@@ -39,8 +39,8 @@ export const ColorGrading = ({ imageData }: { imageData: XmlType }) => {
 	const hightlightSaturation = imageData.SplitToningHighlightSaturation;
 	const shadowHue = imageData.SplitToningShadowHue;
 	const shadowSaturation = imageData.SplitToningShadowSaturation;
-	const midtownHue = imageData.ColorGradeMidtoneHue;
-	const midtownSaturation = imageData.ColorGradeMidtoneSat;
+	const midtownHue = imageData.colorGradeMidtoneHue;
+	const midtownSaturation = imageData.colorGradeMidtoneSat;
 
 	const panes = [
 		{
@@ -49,20 +49,20 @@ export const ColorGrading = ({ imageData }: { imageData: XmlType }) => {
 				<GradingElement
 					hue={hightlightHue}
 					saturation={hightlightSaturation}
-					barAmount={imageData.ColorGradeHighlightLum}
+					barAmount={imageData.colorGradeHighlightLum}
 				/>
 			),
 		},
 		{
 			menuItem: "Midtones",
 			render: () => (
-				<GradingElement hue={midtownHue} saturation={midtownSaturation} barAmount={imageData.ColorGradeMidtoneLum} />
+				<GradingElement hue={midtownHue} saturation={midtownSaturation} barAmount={imageData.colorGradeMidtoneLum} />
 			),
 		},
 		{
 			menuItem: "Shadows",
 			render: () => (
-				<GradingElement hue={shadowHue} saturation={shadowSaturation} barAmount={imageData.ColorGradeShadowLum} />
+				<GradingElement hue={shadowHue} saturation={shadowSaturation} barAmount={imageData.colorGradeShadowLum} />
 			),
 		},
 	];

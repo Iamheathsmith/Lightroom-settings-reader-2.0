@@ -2,25 +2,37 @@
 	display: grid;
 	grid-template-columns: 1fr 25% 320px;
 	height: 100%;
-	background-color: white;
+	overflow: auto;
+	background-color: #a7bacc;
+	padding: 1rem;
+	border: 1px solid #8c8c8c;
 
 	&__column {
 		display: flex;
 		flex-direction: column;
 		overflow: hidden;
+		background-color: white;
 
-		border-top: 1px solid black;
-		border-left: 1px solid black;
-		border-bottom: 1px solid black;
-		&:not(:first) {
-			border-right: 1px solid black;
+		border-top: 1px solid #8c8c8c;
+		border-right: 2px solid #8c8c8c;
+		border-bottom: 1px solid #8c8c8c;
+
+		&:first-of-type {
+			border-left: 1px solid #8c8c8c;
 		}
 
 		&-title {
-			padding: 1rem;
-			border-bottom: 1px solid black;
+			display: flex;
+			justify-content: space-between;
+			font-weight: bold;
+			font-family: poppins;
+			padding: 1em;
+			height: 4rem;
+			font-size: 1.2rem;
+			border-bottom: 2px solid #8c8c8c;
 		}
 
+		.no-settings,
 		.image-preview,
 		.camera-settings,
 		.lightroom-settings {

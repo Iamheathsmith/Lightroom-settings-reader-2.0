@@ -54,7 +54,8 @@ export const convertExporeToBarPostion = (barPostion: number) => {
 	return `${BAR_CENTER + amount}%`;
 };
 
-export const convertBaseBarAmountToBarPostion = (barPostion: number) => {
+export const convertBaseBarAmountToBarPostion = (barPostion: number | undefined) => {
+	if (barPostion === undefined) return `50%`;
 	return `${BAR_CENTER + barPostion / 2}%`;
 };
 
